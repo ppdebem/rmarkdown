@@ -78,7 +78,7 @@ html_dependency_font_awesome <- function() {
 
   htmlDependency(
     "font-awesome",
-    "5.1.0",
+    "5.11.1",
     src = rmarkdown_system_file("rmd/h/fontawesome"),
     stylesheet = c(
       "css/all.css",
