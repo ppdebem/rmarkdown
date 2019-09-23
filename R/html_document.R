@@ -633,17 +633,12 @@ navbar_links_tags <- function(links, depth = 0L) {
 navbar_link_text <- function(x, ...) {
 
   if (!is.null(x$icon)) {
-    # find the iconset
-    split <- strsplit(x$icon, "-")
-    if (length(split[[1]]) > 1)
-      iconset <- split[[1]][[1]]
-    else
-      iconset <- ""
-    tagList(tags$span(class = paste(iconset, x$icon)), " ", x$text, ...)
+    tagList(tags$span(class = paste(x$icon)), " ", x$text, ...)
   }
   else
     tagList(x$text, ...)
 }
+
 
 
 

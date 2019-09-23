@@ -120,7 +120,7 @@ navbar_icon_dependencies <- function(navbar) {
   source <- read_utf8(navbar)
 
   # find icon references
-  res <- regexec('<(span|i) +class *= *("|\') *(fa fa|ion ion)-', source)
+  res <- regexec('<(span|i) +class *= *("|\') *(fab fa|fas fa|ion ion)-', source)
   matches <- regmatches(source, res)
   libs <- c()
   for (match in matches) {
@@ -130,7 +130,7 @@ navbar_icon_dependencies <- function(navbar) {
   libs <- unique(libs)
 
   # return their dependencies
-  html_dependencies_fonts("fa fa" %in% libs, "ion ion" %in% libs)
+  html_dependencies_fonts("fab fa" %in% libs | "fas fa" %in% libs,"ion ion" %in% libs)
 }
 
 # utilty function to return a list of font dependencies based
